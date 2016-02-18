@@ -19,6 +19,11 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        // Specifying table view row height based on auto layout constraints
+        tableView.rowHeight = UITableViewAutomaticDimension
+        // To speed things up
+        tableView.estimatedRowHeight = 120
 
         Business.searchWithTerm("Thai", completion: { (businesses: [Business]!, error: NSError!) -> Void in
             self.businesses = businesses

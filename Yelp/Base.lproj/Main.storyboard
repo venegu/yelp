@@ -17,64 +17,93 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="87" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZlN-NM-1Cz">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="121" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="ZlN-NM-1Cz">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BusinessCell" rowHeight="87" id="kHY-xH-y3m" customClass="BusinessCell" customModule="Yelp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="320" height="87"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BusinessCell" rowHeight="121" id="kHY-xH-y3m" customClass="BusinessCell" customModule="Yelp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="320" height="121"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="kHY-xH-y3m" id="YcE-ei-ICK">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="86.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="120.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yPN-C2-054">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yPN-C2-054">
                                                     <rect key="frame" x="8" y="8" width="70" height="70"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="70" id="hgM-QY-8hG"/>
+                                                        <constraint firstAttribute="width" constant="70" id="xu3-BM-PGU"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="p6J-gA-NCg">
-                                                    <rect key="frame" x="83" y="32" width="83" height="15"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="p6J-gA-NCg">
+                                                    <rect key="frame" x="86" y="30" width="83" height="15"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="15" id="Emh-xD-Hnw"/>
+                                                        <constraint firstAttribute="width" constant="83" id="Sja-TC-cYu"/>
+                                                    </constraints>
                                                 </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1. Grand Pu Bah" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hoa-cJ-X6Q">
-                                                    <rect key="frame" x="83" y="8" width="126" height="24"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="1. Grand Pu Bah" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hoa-cJ-X6Q">
+                                                    <rect key="frame" x="86" y="8" width="174" height="20.5"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="15"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="469 Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mc9-kq-1b7">
-                                                    <rect key="frame" x="170" y="30" width="80" height="20"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0.07 mi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLi-ek-BNW">
-                                                    <rect key="frame" x="271" y="8" width="41" height="17"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5X-wJ-wpD">
-                                                    <rect key="frame" x="296" y="30" width="17" height="20"/>
-                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="12"/>
-                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Thai, Seafood, Salad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQ0-tW-j94">
-                                                    <rect key="frame" x="83" y="63" width="130" height="20"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="469 Reviews" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mc9-kq-1b7">
+                                                    <rect key="frame" x="175" y="29" width="73.5" height="18"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="88 Division St, Mission Bay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xV1-Fj-xBQ">
-                                                    <rect key="frame" x="83" y="47" width="206" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="0.07 mi" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLi-ek-BNW">
+                                                    <rect key="frame" x="268" y="8" width="44" height="18"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$$" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V5X-wJ-wpD">
+                                                    <rect key="frame" x="296" y="29" width="15.5" height="18"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="88 Division St, Mission Bay" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xV1-Fj-xBQ">
+                                                    <rect key="frame" x="86" y="48" width="160.5" height="18"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="13"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thai, Seafood" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jb4-6d-bfD">
+                                                    <rect key="frame" x="86" y="64" width="81" height="18"/>
+                                                    <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="13"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Hoa-cJ-X6Q" firstAttribute="top" secondItem="YcE-ei-ICK" secondAttribute="top" constant="8" id="8HT-m4-mon"/>
+                                                <constraint firstItem="jb4-6d-bfD" firstAttribute="leading" secondItem="xV1-Fj-xBQ" secondAttribute="leading" id="EE8-kI-L88"/>
+                                                <constraint firstItem="xV1-Fj-xBQ" firstAttribute="top" secondItem="p6J-gA-NCg" secondAttribute="bottom" constant="3" id="Gbb-IO-Kaq"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="yPN-C2-054" secondAttribute="bottom" constant="8" id="Hm7-Ei-3Ow"/>
+                                                <constraint firstItem="gLi-ek-BNW" firstAttribute="top" secondItem="YcE-ei-ICK" secondAttribute="top" constant="8" id="JgD-BJ-iZa"/>
+                                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="jb4-6d-bfD" secondAttribute="bottom" constant="4" id="KVt-MU-iKK"/>
+                                                <constraint firstItem="Hoa-cJ-X6Q" firstAttribute="leading" secondItem="yPN-C2-054" secondAttribute="trailing" constant="8" id="Lel-PV-f7S"/>
+                                                <constraint firstItem="xV1-Fj-xBQ" firstAttribute="leading" secondItem="yPN-C2-054" secondAttribute="trailing" constant="8" id="MO3-d8-gaW"/>
+                                                <constraint firstItem="p6J-gA-NCg" firstAttribute="top" secondItem="Hoa-cJ-X6Q" secondAttribute="bottom" constant="1.5" id="TII-T8-R1A"/>
+                                                <constraint firstItem="gLi-ek-BNW" firstAttribute="leading" secondItem="Hoa-cJ-X6Q" secondAttribute="trailing" constant="8" id="hMr-fz-E3N"/>
+                                                <constraint firstAttribute="trailing" secondItem="V5X-wJ-wpD" secondAttribute="trailing" constant="8" id="i3W-SZ-aAL"/>
+                                                <constraint firstItem="yPN-C2-054" firstAttribute="top" secondItem="YcE-ei-ICK" secondAttribute="top" constant="8" id="im9-Ux-6Tf"/>
+                                                <constraint firstItem="yPN-C2-054" firstAttribute="leading" secondItem="YcE-ei-ICK" secondAttribute="leading" constant="8" id="lfp-zZ-Zxb"/>
+                                                <constraint firstItem="jb4-6d-bfD" firstAttribute="top" secondItem="xV1-Fj-xBQ" secondAttribute="bottom" constant="-2" id="lim-Oo-Fc4"/>
+                                                <constraint firstAttribute="trailing" secondItem="gLi-ek-BNW" secondAttribute="trailing" constant="8" id="r8D-dD-THl"/>
+                                                <constraint firstItem="p6J-gA-NCg" firstAttribute="leading" secondItem="yPN-C2-054" secondAttribute="trailing" constant="8" id="vX0-z1-6kN"/>
+                                                <constraint firstItem="V5X-wJ-wpD" firstAttribute="top" secondItem="gLi-ek-BNW" secondAttribute="bottom" constant="3" id="vr7-0Q-cJX"/>
+                                                <constraint firstItem="mc9-kq-1b7" firstAttribute="centerY" secondItem="p6J-gA-NCg" secondAttribute="centerY" id="yvi-je-QUa"/>
+                                                <constraint firstItem="mc9-kq-1b7" firstAttribute="leading" secondItem="p6J-gA-NCg" secondAttribute="trailing" constant="6" id="zy2-fH-W9w"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="addressLabel" destination="xV1-Fj-xBQ" id="kPP-rK-xIO"/>
-                                            <outlet property="categoriesLabel" destination="BQ0-tW-j94" id="cR9-57-hBg"/>
+                                            <outlet property="categoriesLabel" destination="jb4-6d-bfD" id="XqG-gv-6Jp"/>
                                             <outlet property="distanceLabel" destination="gLi-ek-BNW" id="AXl-hZ-yG9"/>
                                             <outlet property="nameLabel" destination="Hoa-cJ-X6Q" id="mY6-dp-jdC"/>
                                             <outlet property="ratingImageView" destination="p6J-gA-NCg" id="jaH-dN-Pib"/>
