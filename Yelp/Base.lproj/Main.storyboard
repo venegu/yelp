@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Businesses View Controller-->
@@ -67,7 +68,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="88 Division St, Mission Bay" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xV1-Fj-xBQ">
-                                                    <rect key="frame" x="86" y="48" width="160.5" height="18"/>
+                                                    <rect key="frame" x="86" y="48" width="218" height="18"/>
                                                     <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="13"/>
                                                     <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -82,6 +83,7 @@
                                             <constraints>
                                                 <constraint firstItem="Hoa-cJ-X6Q" firstAttribute="top" secondItem="YcE-ei-ICK" secondAttribute="top" constant="8" id="8HT-m4-mon"/>
                                                 <constraint firstItem="jb4-6d-bfD" firstAttribute="leading" secondItem="xV1-Fj-xBQ" secondAttribute="leading" id="EE8-kI-L88"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="xV1-Fj-xBQ" secondAttribute="trailing" constant="8" id="GXI-DB-iK0"/>
                                                 <constraint firstItem="xV1-Fj-xBQ" firstAttribute="top" secondItem="p6J-gA-NCg" secondAttribute="bottom" constant="3" id="Gbb-IO-Kaq"/>
                                                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="yPN-C2-054" secondAttribute="bottom" constant="8" id="Hm7-Ei-3Ow"/>
                                                 <constraint firstItem="gLi-ek-BNW" firstAttribute="top" secondItem="YcE-ei-ICK" secondAttribute="top" constant="8" id="JgD-BJ-iZa"/>
