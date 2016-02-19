@@ -11,6 +11,7 @@ import UIKit
 class FiltersViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var resetButton: UIButton!
     
     
     override func viewDidLoad() {
@@ -32,6 +33,8 @@ class FiltersViewController: UIViewController {
         dismissViewControllerAnimated(true, completion: nil)
     }
 
+    @IBAction func onResetAction(sender: AnyObject) {
+    }
     /*
     // MARK: - Navigation
 

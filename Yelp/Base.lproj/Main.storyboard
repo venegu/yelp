@@ -152,7 +152,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="74" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="IUW-rC-XfW">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="532"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CheckCell" id="h3w-Nh-3D6" customClass="CheckCell" customModule="Yelp" customModuleProvider="target">
@@ -165,7 +165,7 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Check" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wAI-Wt-frx">
                                                     <rect key="frame" x="8" y="26" width="49" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -206,13 +206,28 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sS-Go-3m9">
+                                <rect key="frame" x="0.0" y="532" width="320" height="36"/>
+                                <color key="backgroundColor" red="1" green="0.26290458" blue="0.20744528279999999" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="WCF-lq-QSE"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal" title="Reset Filters"/>
+                                <connections>
+                                    <action selector="onResetAction:" destination="ivJ-96-AXy" eventType="touchUpInside" id="lfJ-wE-1Cs"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="IUW-rC-XfW" firstAttribute="top" secondItem="BhV-6a-Dop" secondAttribute="top" id="0kd-SR-qIR"/>
+                            <constraint firstItem="7sS-Go-3m9" firstAttribute="leading" secondItem="BhV-6a-Dop" secondAttribute="leading" id="4Ai-5Q-G9k"/>
+                            <constraint firstItem="7sS-Go-3m9" firstAttribute="top" secondItem="IUW-rC-XfW" secondAttribute="bottom" id="AU7-H5-9eo"/>
+                            <constraint firstAttribute="trailing" secondItem="7sS-Go-3m9" secondAttribute="trailing" id="Bjk-9B-Lgk"/>
                             <constraint firstItem="IUW-rC-XfW" firstAttribute="leading" secondItem="BhV-6a-Dop" secondAttribute="leading" id="NGk-sl-pes"/>
                             <constraint firstAttribute="trailing" secondItem="IUW-rC-XfW" secondAttribute="trailing" id="ZcW-mC-J9n"/>
-                            <constraint firstItem="hxd-hz-TfB" firstAttribute="top" secondItem="IUW-rC-XfW" secondAttribute="bottom" id="sFj-Gk-sG1"/>
+                            <constraint firstItem="hxd-hz-TfB" firstAttribute="top" secondItem="7sS-Go-3m9" secondAttribute="bottom" id="lD3-z7-0Nz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Filters" id="rzb-sv-0Kr">
@@ -228,6 +243,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="resetButton" destination="7sS-Go-3m9" id="Osh-eo-Fbl"/>
                         <outlet property="tableView" destination="IUW-rC-XfW" id="jC3-Ln-6h5"/>
                     </connections>
                 </viewController>
