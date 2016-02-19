@@ -8,12 +8,17 @@
 
 import UIKit
 
-class BusinessesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
+class BusinessesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UIScrollViewDelegate {
 
     var businesses: [Business]!
     var filteredBusinesses: [Business]!
     
     var searchBar : UISearchBar!
+    
+    // Declaring variables pertaining to infinite scrolling
+    var isMoreDataLoading = false
+    var loadingMoreView: InfiniteScrollActivityView?
+    var offset: Int? = 20
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -38,7 +43,7 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         // To speed things up when opening the app - dynamic cell heights take time to calculate
         tableView.estimatedRowHeight = 120
 
-        Business.searchWithTerm("Thai", completion: { (businesses: [Business]!, error: NSError!) -> Void in
+        Business.searchWithTerm("Restaurant", latitude: 37.721839, longitude: -122.476927, sort: .Distance, categories: [], deals: false, offset: nil, limit: 20, completion: { (businesses: [Business]!, error: NSError!) -> Void in
             self.businesses = businesses
             
             //self.filteredBusinesses = self.businesses
@@ -64,6 +69,15 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
             }
         }
 */
+        // Adding loading view as an inset to the table view for infinite scrolling
+        let frame = CGRectMake(0, tableView.contentSize.height, tableView.bounds.size.width, InfiniteScrollActivityView.defaultHeight)
+        loadingMoreView = InfiniteScrollActivityView(frame: frame)
+        loadingMoreView!.hidden = true
+        tableView.addSubview(loadingMoreView!)
+        
+        var insets = tableView.contentInset;
+        insets.bottom += InfiniteScrollActivityView.defaultHeight;
+        tableView.contentInset = insets
     }
 
     override func didReceiveMemoryWarning() {
@@ -71,6 +85,27 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         // Dispose of any resources that can be recreated.
     }
     
+    // Checking if the user scrolled, making the request/view and starting the load indicator
+    func scrollViewDidScroll(scrollView: UIScrollView) {
+        if (!isMoreDataLoading) {
+            // Calculate the position of one screen length before the bottom of the results
+            let scrollViewContentHeight = tableView.contentSize.height
+            let scrollOffsetThreshold = scrollViewContentHeight - tableView.bounds.size.height
+            
+            // When the user has scrolled past the threshold, start requesting
+            if(scrollView.contentOffset.y > scrollOffsetThreshold && tableView.dragging) {
+                isMoreDataLoading = true
+                
+                // Update position of loadingMoreView, and start loading indicator
+                let frame = CGRectMake(0, tableView.contentSize.height, tableView.bounds.size.width, InfiniteScrollActivityView.defaultHeight)
+                loadingMoreView?.frame = frame
+                loadingMoreView!.startAnimating()
+                
+                // Code to load more results
+                loadMoreData()		
+            }
+        }
+    }
     
     /**********
      Table View
@@ -122,6 +157,27 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         tableView.reloadData()
     }
     
+    // Getting more data 
+    func loadMoreData() {
+            //Example of Yelp search with more search options specified
+            Business.searchWithTerm("Restaurant", latitude: 37.721839, longitude: -122.476927, sort: .Distance, categories: [], deals: false, offset: offset, limit:20) { (businesses: [Business]!, error: NSError!) -> Void in
+            
+                // Stop the loading indicator
+                self.loadingMoreView!.stopAnimating()
+            
+                if (businesses != []) {
+                    for business in businesses {
+                        self.businesses.append(business)
+                    }
+                    self.filteredBusinesses = self.businesses
+                    self.tableView.reloadData()
+                    self.offset! = self.offset! + 20
+                }
+                // Update flag
+                self.isMoreDataLoading = false
+            }
+        }
+    
     /*
     // MARK: - Navigation
 
@@ -132,4 +188,41 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     }
     */
 
+}
+
+// Infinite Scroll Class
+class InfiniteScrollActivityView: UIView {
+    var activityIndicatorView: UIActivityIndicatorView = UIActivityIndicatorView()
+    static let defaultHeight:CGFloat = 60.0
+    
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        setupActivityIndicator()
+    }
+    
+    override init(frame aRect: CGRect) {
+        super.init(frame: aRect)
+        setupActivityIndicator()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        activityIndicatorView.center = CGPointMake(self.bounds.size.width/2, self.bounds.size.height/2)
+    }
+    
+    func setupActivityIndicator() {
+        activityIndicatorView.activityIndicatorViewStyle = .Gray
+        activityIndicatorView.hidesWhenStopped = true
+        self.addSubview(activityIndicatorView)
+    }
+    
+    func stopAnimating() {
+        self.activityIndicatorView.stopAnimating()
+        self.hidden = true
+    }
+    
+    func startAnimating() {
+        self.hidden = false
+        self.activityIndicatorView.startAnimating()
+    }
 }
