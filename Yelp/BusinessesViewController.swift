@@ -41,7 +41,7 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         Business.searchWithTerm("Thai", completion: { (businesses: [Business]!, error: NSError!) -> Void in
             self.businesses = businesses
             
-            self.filteredBusinesses = self.businesses
+            //self.filteredBusinesses = self.businesses
             self.tableView.reloadData()
             
             for business in businesses {
@@ -99,10 +99,13 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     
     // Searching for items related to search and displaying those
     func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
-        filteredBusinesses = searchText.isEmpty ? businesses : businesses!.filter({ (business: Business) -> Bool in
-            return (business.name)!.rangeOfString(searchText, options: .CaseInsensitiveSearch) != nil
+        Business.searchWithTerm(searchText, completion: { (businesses: [Business]!, error: NSError!) -> Void in
+            self.businesses = businesses
+            
+            self.filteredBusinesses = self.businesses
+            self.tableView.reloadData()
+
         })
-        tableView.reloadData()
     }
     
     // Displaying cancel button
