@@ -126,16 +126,19 @@
                     </view>
                     <navigationItem key="navigationItem" title="Yelp" id="lSa-sO-fEp">
                         <barButtonItem key="leftBarButtonItem" title="Filter" id="f1g-D0-cpG">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="xBI-az-Vys" kind="modal" id="lfG-Cr-Lti"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Map" id="hc1-k3-po8">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <connections>
                                 <segue destination="cOL-19-pJs" kind="push" id="Kti-xT-Nby"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="tableView" destination="ZlN-NM-1Cz" id="uNZ-bc-Omh"/>
                     </connections>
@@ -169,6 +172,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="obK-s9-adt"/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="mapView" destination="oDE-ku-Jhr" id="aFX-up-6OI"/>
                     </connections>
@@ -280,6 +284,7 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <connections>
                         <outlet property="resetButton" destination="7sS-Go-3m9" id="Osh-eo-Fbl"/>
                         <outlet property="tableView" destination="IUW-rC-XfW" id="jC3-Ln-6h5"/>
@@ -313,6 +318,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xBI-az-Vys" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8Gb-68-yEp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
