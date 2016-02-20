@@ -130,6 +130,11 @@
                                 <segue destination="xBI-az-Vys" kind="modal" id="lfG-Cr-Lti"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Map" id="hc1-k3-po8">
+                            <connections>
+                                <segue destination="cOL-19-pJs" kind="push" id="Kti-xT-Nby"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="ZlN-NM-1Cz" id="uNZ-bc-Omh"/>
@@ -138,6 +143,39 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fgb-4b-F1b" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1365" y="338"/>
+        </scene>
+        <!--Map-->
+        <scene sceneID="DlP-y2-I1J">
+            <objects>
+                <viewController id="cOL-19-pJs" customClass="MapViewController" customModule="Yelp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="hRm-Hb-Cx4"/>
+                        <viewControllerLayoutGuide type="bottom" id="QeP-L1-ng3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="RIv-lN-AaK">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oDE-ku-Jhr">
+                                <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oDE-ku-Jhr" firstAttribute="top" secondItem="hRm-Hb-Cx4" secondAttribute="bottom" id="6Mf-Tf-Svt"/>
+                            <constraint firstItem="QeP-L1-ng3" firstAttribute="top" secondItem="oDE-ku-Jhr" secondAttribute="bottom" id="Ga9-Zj-lxv"/>
+                            <constraint firstAttribute="trailing" secondItem="oDE-ku-Jhr" secondAttribute="trailing" id="OHo-uT-XU9"/>
+                            <constraint firstItem="oDE-ku-Jhr" firstAttribute="leading" secondItem="RIv-lN-AaK" secondAttribute="leading" id="sMV-Ax-drl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Map" id="obK-s9-adt"/>
+                    <connections>
+                        <outlet property="mapView" destination="oDE-ku-Jhr" id="aFX-up-6OI"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zVn-9l-c7P" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1365" y="1053"/>
         </scene>
         <!--Filters-->
         <scene sceneID="jnU-pn-EZU">
@@ -256,6 +294,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="kNe-pq-XsO" sceneMemberID="viewController">
                     <toolbarItems/>
+                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="RjJ-7r-MtB">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
