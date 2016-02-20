@@ -41,7 +41,7 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         tableView.rowHeight = UITableViewAutomaticDimension
         
         // To speed things up when opening the app - dynamic cell heights take time to calculate
-        tableView.estimatedRowHeight = 120
+        tableView.estimatedRowHeight = 110
 
         Business.searchWithTerm("Restaurant", latitude: 37.721839, longitude: -122.476927, sort: .Distance, categories: [], deals: false, offset: nil, limit: 20, completion: { (businesses: [Business]!, error: NSError!) -> Void in
             self.businesses = businesses
@@ -124,9 +124,13 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         
         cell.business = businesses[indexPath.row]
         
+        cell.accessoryType = UITableViewCellAccessoryType.None
+        
         return cell
         
     }
+    
+
     
     /**********
      Search Bar

@@ -111,6 +111,7 @@
                                             <outlet property="ratingImageView" destination="p6J-gA-NCg" id="jaH-dN-Pib"/>
                                             <outlet property="reviewsCountLabel" destination="mc9-kq-1b7" id="6Qq-SM-8QF"/>
                                             <outlet property="thumbViewImage" destination="yPN-C2-054" id="5g5-0z-TA8"/>
+                                            <segue destination="bPl-Sr-eZQ" kind="push" id="1Xr-oJ-snD"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -179,7 +180,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zVn-9l-c7P" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1365" y="1053"/>
+            <point key="canvasLocation" x="1074" y="1084"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tu7-Hl-7wy">
+            <objects>
+                <viewController id="bPl-Sr-eZQ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gmn-3m-fRp"/>
+                        <viewControllerLayoutGuide type="bottom" id="lgm-ww-7OY"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="T3W-e9-A9U">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="bZX-9l-N7y"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tDA-4z-Ci4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1578" y="1084"/>
         </scene>
         <!--Filters-->
         <scene sceneID="jnU-pn-EZU">
