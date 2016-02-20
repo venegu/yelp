@@ -93,4 +93,19 @@ class YelpClient: BDBOAuth1RequestOperationManager {
                 completion(nil, error)
         })!
     }
+    
+    // To get more data about a business through the business API http://www.yelp.com/developers/documentation/v2/search_api
+    func getBusiness(id: String, completion: (NSDictionary!, NSError!) -> Void) -> AFHTTPRequestOperation {
+        let sanitizedId = id.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
+        
+        return self.GET("business/\(sanitizedId)", parameters: nil, success: { (operation: AFHTTPRequestOperation!, response: AnyObject!) -> Void in
+            let dictionary = response as? NSDictionary
+            print(dictionary)
+            if dictionary != nil {
+                completion(dictionary!, nil)
+            }
+            }, failure: { (operation: AFHTTPRequestOperation?, error: NSError!) -> Void in
+                completion(nil, error)
+        })!
+    }
 }

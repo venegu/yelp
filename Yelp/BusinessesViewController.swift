@@ -75,8 +75,8 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         loadingMoreView!.hidden = true
         tableView.addSubview(loadingMoreView!)
         
-        var insets = tableView.contentInset;
-        insets.bottom += InfiniteScrollActivityView.defaultHeight;
+        var insets = tableView.contentInset
+        insets.bottom += InfiniteScrollActivityView.defaultHeight
         tableView.contentInset = insets
     }
 
