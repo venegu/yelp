@@ -24,9 +24,11 @@ class DetailViewController: UIViewController {
     @IBOutlet weak var addressSecLabel: UILabel!
     @IBOutlet weak var addressThreeLabel: UILabel!
 
+    @IBOutlet weak var detailsView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         addressLabel.text = ""
         addressSecLabel.text = ""
         addressThreeLabel.text = ""
