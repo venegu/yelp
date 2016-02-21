@@ -15,6 +15,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var mapView: MKMapView!
     
     var businesses: [Business]!
+    var business: Business!
     
     var locationManager : CLLocationManager!
     
@@ -36,8 +37,10 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
                 for business in businesses {
                     let pinLocation = CLLocationCoordinate2DMake(business.latitude! as Double!, business.longitude as Double!)
                     self.addAnnotationAtCoordinate(pinLocation, title: business.name!)
+                    
                 }
             }
+        
         }
 
     override func didReceiveMemoryWarning() {
@@ -53,7 +56,7 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     
-    // Focusing on a specific region
+    // Focusing on a specific region if location updated
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         if let location = locations.first {
             let span = MKCoordinateSpanMake(0.1, 0.1)
@@ -70,7 +73,13 @@ class MapViewController: UIViewController, CLLocationManagerDelegate {
         annotation.title = title
         mapView.addAnnotation(annotation)
     }
-
+    
+    func goToLocation(location: CLLocation) {
+        let span = MKCoordinateSpanMake(0.1, 0.1)
+        let region = MKCoordinateRegionMake(location.coordinate, span)
+        mapView.setRegion(region, animated: false)
+    }
+    
     /*
     // MARK: - Navigation
 
