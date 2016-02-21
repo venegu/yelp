@@ -160,6 +160,12 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         tableView.reloadData()
     }
     
+    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+        searchBar.showsCancelButton = false
+        searchBar.resignFirstResponder()
+        
+    }
+    
     // Getting more data 
     func loadMoreData() {
             //Example of Yelp search with more search options specified
