@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BusinessesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UIScrollViewDelegate {
+class BusinessesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate, UIScrollViewDelegate, FiltersViewControllerDelegate {
 
     var businesses: [Business]!
     var filteredBusinesses: [Business]!
@@ -203,6 +203,23 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
             detailViewController.business = business
         }
         
+        let navigationController = segue.destinationViewController as! UINavigationController
+        
+        let filtersViewController = navigationController.topViewController as! FiltersViewController
+        
+        filtersViewController.delegate = self
+        
+    }
+    
+    func filtersViewController(filtersViewController: FiltersViewController, didUpdateFilters filters: [String : AnyObject]) {
+        
+        var categories = filters["categories"] as? [String]
+        print("categories: \(categories)")
+        
+        Business.searchWithTerm("Restaurants", latitude: 37.721839, longitude: -122.476927, sort: nil, categories: categories, deals: nil, offset: offset, limit:20) { ( businesses: [Business]!, error: NSError!) -> Void in
+            self.businesses = businesses
+            self.tableView.reloadData()
+        }
     }
 
 
