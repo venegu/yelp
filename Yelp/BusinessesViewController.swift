@@ -48,11 +48,6 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
             
             //self.filteredBusinesses = self.businesses
             self.tableView.reloadData()
-            
-            for business in businesses {
-                print(business.name!)
-                print(business.address!)
-            }
         })
 
 /* Example of Yelp search with more search options specified
@@ -130,6 +125,10 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
         
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
+    }
+    
 
     
     /**********
@@ -155,6 +154,7 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     // Returning intial data back to table view & resigning first responder when cancel is clicked
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         searchBar.showsCancelButton = false
+        searchBar.text = ""
         searchBar.resignFirstResponder()
         filteredBusinesses = businesses
         tableView.reloadData()
@@ -163,23 +163,23 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     // Getting more data 
     func loadMoreData() {
             //Example of Yelp search with more search options specified
-            Business.searchWithTerm("Restaurant", latitude: 37.721839, longitude: -122.476927, sort: .Distance, categories: [], deals: false, offset: offset, limit:20) { (businesses: [Business]!, error: NSError!) -> Void in
+        Business.searchWithTerm("Restaurant", latitude: 37.721839, longitude: -122.476927, sort: .Distance, categories: [], deals: false, offset: offset, limit:20) { (businesses: [Business]!, error: NSError!) -> Void in
             
                 // Stop the loading indicator
-                self.loadingMoreView!.stopAnimating()
+            self.loadingMoreView!.stopAnimating()
             
-                if (businesses != []) {
-                    for business in businesses {
-                        self.businesses.append(business)
-                    }
-                    self.filteredBusinesses = self.businesses
-                    self.tableView.reloadData()
-                    self.offset! = self.offset! + 20
+            if (businesses != []) {
+                for business in businesses {
+                    self.businesses.append(business)
                 }
-                // Update flag
-                self.isMoreDataLoading = false
+                self.filteredBusinesses = self.businesses
+                self.tableView.reloadData()
+                self.offset! = self.offset! + 20
             }
+            // Update flag
+            self.isMoreDataLoading = false
         }
+    }
     
 
     // MARK: - Navigation
