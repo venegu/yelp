@@ -155,7 +155,6 @@ class BusinessesViewController: UIViewController, UITableViewDataSource, UITable
     // Returning intial data back to table view & resigning first responder when cancel is clicked
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         searchBar.showsCancelButton = false
-        searchBar.text = ""
         searchBar.resignFirstResponder()
         filteredBusinesses = businesses
         tableView.reloadData()
