@@ -266,26 +266,34 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QBR-2I-pPs">
                                 <rect key="frame" x="0.0" y="354" width="320" height="72"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="88 Division St, Mission Bay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agK-9M-aFV">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="88 Division St, Mission Bay" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lmm-Q8-px4">
                                         <rect key="frame" x="8" y="8" width="193" height="22"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Line 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pG3-mv-8Wo">
-                                        <rect key="frame" x="8" y="27" width="218" height="22"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Line 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Du-Q1-kZY">
+                                        <rect key="frame" x="8" y="42" width="44" height="22"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Line 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hgh-ZQ-sxE">
-                                        <rect key="frame" x="8" y="47" width="281" height="22"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Line 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gc-CT-iyz">
+                                        <rect key="frame" x="8" y="25" width="44" height="22"/>
                                         <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="2Du-Q1-kZY" firstAttribute="top" secondItem="4gc-CT-iyz" secondAttribute="bottom" constant="-5" id="CJy-0Z-28X"/>
+                                    <constraint firstItem="4gc-CT-iyz" firstAttribute="leading" secondItem="QBR-2I-pPs" secondAttribute="leading" constant="8" id="F9E-yb-oZh"/>
+                                    <constraint firstItem="Lmm-Q8-px4" firstAttribute="top" secondItem="QBR-2I-pPs" secondAttribute="top" constant="8" id="ozS-bi-nZ3"/>
+                                    <constraint firstItem="Lmm-Q8-px4" firstAttribute="leading" secondItem="QBR-2I-pPs" secondAttribute="leading" constant="8" id="rfu-hY-0ty"/>
+                                    <constraint firstItem="2Du-Q1-kZY" firstAttribute="leading" secondItem="QBR-2I-pPs" secondAttribute="leading" constant="8" id="uB6-CP-VH0"/>
+                                    <constraint firstItem="4gc-CT-iyz" firstAttribute="top" secondItem="Lmm-Q8-px4" secondAttribute="bottom" constant="-5" id="z2B-0o-3Ht"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -310,9 +318,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="bZX-9l-N7y"/>
                     <connections>
-                        <outlet property="addressLabel" destination="agK-9M-aFV" id="rww-SR-iEX"/>
-                        <outlet property="addressSecLabel" destination="pG3-mv-8Wo" id="vkp-hH-rSh"/>
-                        <outlet property="addressThreeLabel" destination="Hgh-ZQ-sxE" id="5Q8-5i-cyd"/>
+                        <outlet property="addressLabel" destination="Lmm-Q8-px4" id="nky-cc-hQD"/>
+                        <outlet property="addressSecLabel" destination="4gc-CT-iyz" id="ub9-ys-ULm"/>
+                        <outlet property="addressThreeLabel" destination="2Du-Q1-kZY" id="AXx-TX-pcr"/>
                         <outlet property="amountLabel" destination="aOK-C7-b0a" id="bqT-t4-Q7q"/>
                         <outlet property="businessImageView" destination="syV-kR-WIO" id="2Jr-u3-YaB"/>
                         <outlet property="businessNameLabel" destination="PnY-Cu-QqJ" id="Ofu-JH-Mf7"/>
