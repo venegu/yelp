@@ -2,7 +2,7 @@
 
 **Yelpster** is a Yelp search app using the [Yelp API](http://www.yelp.com/developers/documentation/v2/search_api).
 
-Time spent: **6** hours spent in total
+Time spent: **9** hours spent in total
 
 ## User Stories
 
@@ -21,7 +21,8 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [ ] Filter page with categories.
+- [x] Working filter page with categories (Gif does not reflect this feature yet - I will update it in a bit).
+- [ ] Filter's page with more useful details (currently open(?), deals, sort categories, etc.).
 - [ ] Map view in restaurant details view.
 
 Please list two areas of the assignment you'd like to **discuss further with your peers** during the next class (examples include better ways to implement something, how to extend your app in certain ways, etc):
